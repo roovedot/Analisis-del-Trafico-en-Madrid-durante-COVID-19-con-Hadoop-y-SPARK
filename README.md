@@ -1,0 +1,2 @@
+# Analisis-del-Trafico-en-Madrid-durante-COVID-19-con-Hadoop-y-SPARK
+Estudio usando SPARK de cómo ha afectado al pandemia del covid-19 al tráfico en la ciudad de Madrid durante períodos relevantes desde el comienzo de la pandemia hasta la actualidad que puedan haber afectado a la movilidad de las personas (p.e antes y después de la pandemia, confinamiento estricto, restricciones de movilidad entre provincias, etc)
