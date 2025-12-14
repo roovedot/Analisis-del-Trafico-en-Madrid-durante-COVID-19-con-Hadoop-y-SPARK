@@ -390,6 +390,9 @@ df = reclasificar_periodo_por_fecha(df)
 # 4. Ejecutar análisis
 print("\n[4/5] Ejecutando análisis...")
 
+print("\n  Instancias por período:")
+print(df['periodo'].value_counts().sort_index())
+
 print("\n  Análisis 1: Intensidad, ocupación y carga")
 analisis_1 = analisis_intensidad_ocupacion_carga(df)
 print(analisis_1)

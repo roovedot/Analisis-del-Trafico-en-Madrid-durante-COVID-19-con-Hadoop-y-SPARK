@@ -1,0 +1,116 @@
+================================================================================
+ANÁLISIS COVID-19 EN TRÁFICO MADRID - PANDAS (LOCAL)
+================================================================================
+
+[1/5] Cargando datos...
+
+Cargando Período 2: Primeros casos
+Carpeta: /media/roovedot/PHILIPS/data_GVDAnalisisTrafico/periodo_2_PrimerosCasos
+  ✓ Cargado: 02-2020.csv
+  ✓ Cargado: 03-2020.csv
+
+Cargando Período 3: Confinamiento estricto
+Carpeta: /media/roovedot/PHILIPS/data_GVDAnalisisTrafico/periodo_3_Confinamiento
+  ✓ Cargado: 04-2020.csv
+
+✓ Total de filas cargadas: 32,770,040
+
+[2/5] Limpiando datos...
+
+[3/5] Reclasificando períodos por fecha...
+
+[4/5] Ejecutando análisis...
+
+  Instancias por período:
+periodo
+Confinamiento estricto    16250834
+Primeros casos            16196332
+Name: count, dtype: int64
+
+  Análisis 1: Intensidad, ocupación y carga
+                       intensidad                    ocupacion                carga            
+                             mean     std    max min      mean    std    max   mean    std  max
+periodo                                                                                        
+Confinamiento estricto     115.10  257.78  90800   0      1.81   5.11  100.0   5.45   7.17  100
+Primeros casos             433.68  678.69  40405   0      6.35  10.56  100.0  19.66  18.97  100
+
+  Análisis 2: Carga por hora
+                   periodo  hora       mean        std
+0   Confinamiento estricto     0   1.980988   4.521241
+1   Confinamiento estricto     1   1.506834   4.405575
+2   Confinamiento estricto     2   1.331102   4.340961
+3   Confinamiento estricto     3   1.256202   4.273185
+4   Confinamiento estricto     4   1.277672   4.288462
+5   Confinamiento estricto     5   1.637090   4.307229
+6   Confinamiento estricto     6   3.994882   6.485602
+7   Confinamiento estricto     7   6.980511   8.730044
+8   Confinamiento estricto     8   7.890753   8.683650
+9   Confinamiento estricto     9   7.471955   7.602121
+10  Confinamiento estricto    10   7.429904   7.190896
+11  Confinamiento estricto    11   7.705285   7.266605
+12  Confinamiento estricto    12   8.009388   7.395219
+13  Confinamiento estricto    13   8.355009   7.718181
+14  Confinamiento estricto    14   9.758630   9.260144
+15  Confinamiento estricto    15   9.464479   9.689510
+16  Confinamiento estricto    16   6.559145   6.804449
+17  Confinamiento estricto    17   5.860668   6.201538
+18  Confinamiento estricto    18   6.002438   6.343786
+19  Confinamiento estricto    19   5.607854   5.938881
+20  Confinamiento estricto    20   5.068194   5.646886
+21  Confinamiento estricto    21   4.622854   5.447533
+22  Confinamiento estricto    22   4.006817   5.246258
+23  Confinamiento estricto    23   2.928432   4.731294
+24          Primeros casos     0   8.731202   8.999852
+25          Primeros casos     1   6.097267   7.851870
+26          Primeros casos     2   4.473064   6.844254
+27          Primeros casos     3   3.684533   6.319037
+28          Primeros casos     4   3.320915   5.931790
+29          Primeros casos     5   3.865615   6.023040
+30          Primeros casos     6   8.251744  10.662517
+31          Primeros casos     7  18.177181  18.506057
+32          Primeros casos     8  26.986751  22.475998
+33          Primeros casos     9  28.238412  21.531216
+34          Primeros casos    10  24.771702  17.965242
+35          Primeros casos    11  25.439177  17.449802
+36          Primeros casos    12  26.959595  17.945447
+37          Primeros casos    13  28.022990  18.480406
+38          Primeros casos    14  30.113185  19.807249
+39          Primeros casos    15  27.076733  19.243052
+40          Primeros casos    16  25.874637  18.592270
+41          Primeros casos    17  28.632915  19.518056
+42          Primeros casos    18  30.341558  20.211086
+43          Primeros casos    19  30.392093  19.974932
+44          Primeros casos    20  27.816140  18.678046
+45          Primeros casos    21  22.739920  16.367692
+46          Primeros casos    22  16.044608  12.753570
+47          Primeros casos    23  11.386983  10.168999
+
+  Análisis 3: Laborables vs fin de semana
+                                      carga        intensidad         ocupacion       
+                                       mean    std       mean     std      mean    std
+periodo                tipo_día                                                       
+Confinamiento estricto Fin de semana   3.49   5.27      69.50  258.26      1.28   4.62
+                       Laborable       6.12   7.60     130.71  255.75      1.99   5.26
+Primeros casos         Fin de semana  15.09  14.72     339.51  547.83      4.43   8.16
+                       Laborable      21.65  20.23     474.85  724.73      7.19  11.35
+
+  Análisis 4: Tipo de vía
+                                  carga        intensidad          ocupacion       
+                                   mean    std       mean      std      mean    std
+periodo                tipo_elem                                                   
+Confinamiento estricto M30         7.24  10.53     327.68   454.66      1.19   3.02
+                       URB         5.23   6.59      88.50   206.24      1.89   5.30
+Primeros casos         M30        26.81  29.86    1345.96  1399.41      5.99   7.44
+                       URB        18.82  17.07     327.49   422.06      6.39  10.86
+
+[5/5] Generando gráficos...
+✓ Gráfico guardado: 01_intensidad_ocupacion_carga.png
+✓ Gráfico guardado: 02_carga_por_hora.png
+✓ Gráfico guardado: 03_laborables_vs_finde.png
+✓ Gráfico guardado: 04_tipo_via.png
+
+================================================================================
+✓ ANÁLISIS COMPLETADO
+================================================================================
+
+Archivos guardados en: ./outputs/
