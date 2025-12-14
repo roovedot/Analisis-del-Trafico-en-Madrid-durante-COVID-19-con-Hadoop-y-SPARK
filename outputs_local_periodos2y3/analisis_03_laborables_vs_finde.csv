@@ -1,0 +1,7 @@
+,,carga,carga,intensidad,intensidad,ocupacion,ocupacion
+,,mean,std,mean,std,mean,std
+periodo,tipo_día,,,,,,
+Confinamiento estricto,Fin de semana,3.49,5.27,69.5,258.26,1.28,4.62
+Confinamiento estricto,Laborable,6.12,7.6,130.71,255.75,1.99,5.26
+Primeros casos,Fin de semana,15.09,14.72,339.51,547.83,4.43,8.16
+Primeros casos,Laborable,21.65,20.23,474.85,724.73,7.19,11.35

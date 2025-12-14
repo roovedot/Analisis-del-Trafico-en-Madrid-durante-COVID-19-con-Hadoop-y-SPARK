@@ -1,0 +1,7 @@
+,,carga,carga,intensidad,intensidad,ocupacion,ocupacion
+,,mean,std,mean,std,mean,std
+periodo,tipo_elem,,,,,,
+Confinamiento estricto,M30,7.24,10.53,327.68,454.66,1.19,3.02
+Confinamiento estricto,URB,5.23,6.59,88.5,206.24,1.89,5.3
+Primeros casos,M30,26.81,29.86,1345.96,1399.41,5.99,7.44
+Primeros casos,URB,18.82,17.07,327.49,422.06,6.39,10.86
