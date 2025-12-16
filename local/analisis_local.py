@@ -17,7 +17,7 @@ DATA_DIR = os.getenv('DATA_DIR')
 OUTPUT_DIR = './outputs'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-PERIODOS_A_CARGAR = [2, 3]  # Períodos a cargar en análisis local
+PERIODOS_A_CARGAR = [4]  # Períodos a cargar en análisis local
 
 # Configuración de visualización
 sns.set_style("whitegrid")
