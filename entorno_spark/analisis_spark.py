@@ -4,7 +4,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
     col, year, month, dayofweek, hour, 
     avg, max as spark_max, min as spark_min, stddev, count, when, 
-    to_timestamp, lit, unix_timestamp
+    to_timestamp, lit
 )
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -20,7 +20,6 @@ load_dotenv()
 # Paths
 DATA_DIR = os.getenv('DATA_DIR')
 OUTPUT_DIR = './outputs'
-SPARK_MASTER = os.getenv('SPARK_MASTER', 'spark://127.0.0.1:7077')
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -65,7 +64,7 @@ def encontrar_csvs(data_dir):
     Returns:
         Lista de rutas a todos los archivos CSV
     """
-    csvs = list(Path(data_dir).glob('periodo_*/*.csv')) # Buscar todos los CSVs en subcarpetas
+    csvs = list(Path(data_dir).glob('periodo_*/*.csv'))
     print(f"✓ Encontrados {len(csvs)} archivos CSV")
     return [str(csv) for csv in sorted(csvs)]
 
@@ -379,20 +378,19 @@ def grafico_tipo_via(df):
 
 if __name__ == '__main__':
     print("="*80)
-    print("ANÁLISIS COVID-19 EN TRÁFICO MADRID - SPARK (DISTRIBUIDO)")
+    print("ANÁLISIS COVID-19 EN TRÁFICO MADRID - SPARK (LOCAL)")
     print("="*80)
     
-    # 1. Inicializar Spark
-    print("\n[1/6] Inicializando Spark...")
+    # 1. Inicializar Spark en modo LOCAL
+    print("\n[1/6] Inicializando Spark (modo local)...")
     spark = SparkSession.builder \
         .appName("COVID19_Trafico_Madrid") \
-        .master(SPARK_MASTER) \
-        .config("spark.sql.shuffle.partitions", "100") \
+        .master("local[*]") \
         .config("spark.driver.memory", "4g") \
-        .config("spark.executor.memory", "4g") \
+        .config("spark.sql.shuffle.partitions", "4") \
         .getOrCreate()
     
-    print(f"✓ Spark inicializado en: {SPARK_MASTER}")
+    print(f"✓ Spark inicializado en modo LOCAL (utilizando todos los cores)")
     
     # 2. Encontrar y cargar CSVs
     print("\n[2/6] Encontrando archivos CSV...")
