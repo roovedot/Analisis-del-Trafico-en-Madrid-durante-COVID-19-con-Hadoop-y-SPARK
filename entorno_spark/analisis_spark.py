@@ -20,7 +20,7 @@ load_dotenv()
 # Paths
 DATA_DIR = os.getenv('DATA_DIR')
 OUTPUT_DIR = './outputs'
-SPARK_MASTER = os.getenv('SPARK_MASTER', 'spark://10.0.1.14:7077')
+SPARK_MASTER = os.getenv('SPARK_MASTER', 'spark://127.0.0.1:7077')
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
